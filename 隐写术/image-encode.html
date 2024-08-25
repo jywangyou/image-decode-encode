@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片加密</title>
+    <!-- <script src="./图片隐写/push.js"></script>
+<script src="./图片隐写/hm.js"></script> -->
+<link rel="stylesheet" href="./图片隐写/buttons.css">
+<!-- <script src="./图片隐写/jquery.min.js"></script> -->
+<script async="" src="./图片隐写/f.txt" crossorigin="anonymous"></script>
+<!-- <script src="./图片隐写/tj.js"></script> -->
+<script src="./图片隐写/sjcl.js" type="text/javascript"></script>
+    <script src="./图片隐写/main.js" type="text/javascript"></script>
+    <style>
+        #origin_image{
+            margin: 10px auto;
+        }
+        #secret_text{
+            width: 95%;
+            margin: 10px auto;   
+        }
+        #secret_pwd{
+            height: 35px;
+            width: 95%;
+            margin: 10px auto;
+        }
+        #result_image{
+            width: 100px;
+            height: 100px;
+        }
+        .btnshow{
+            margin: 10px auto;
+        }
+        #result_image_output{
+            margin: 10px;
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h4 class="strong">
+        生成带隐藏信息的图片
+      </h4>
+      <div class="divider">
+      </div>
+      <div class="row">
+        <div class="span">
+          1. 从电脑中选择一张用于加密信息的图片：
+        </div>
+        <div class="span">
+          <input type="file" accept="image/*" id="origin_image" onchange="importImage();">
+        </div>
+      </div>
+      <div class="row">
+        <div class="span">
+          2. 输入你要隐藏到图片中的文字信息：
+        </div>
+        <div class="span six">
+          <!-- <input type="text" class="mytxt" placeholder="隐藏文字，比如：cxl，我爱你" id="secret_text"  />-->
+  
+          <textarea id="secret_text" rows="8" cols="60" placeholder="隐藏文字，比如：I love you，我爱你"></textarea>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span">
+          3. 输入需要解开信息的密码：
+        </div>
+        <div class="span six">
+          <input type="password" class="mytxt" placeholder="信息查看密码，可以为空即为不加密" id="secret_pwd">
+        </div>
+      </div>
+      <div>
+        <button class="button button-glow button-border button-rounded button-primary btnshow" onclick="javascript:encode()"
+          type="button">
+          生成带隐藏信息的图片
+        </button>
+      </div>
+      <div class="alert success">
+        <canvas id="result_image" class="hidden">
+        </canvas>
+        <div id="encode_tip" class="strong green">
+        </div>
+        <img id="result_image_output">
+      </div>
+      <div class="divider">
+      </div>
+</body>
+</html>

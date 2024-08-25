@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片解密</title>
+    <!-- <script src="./图片隐写/push.js"></script>
+<script src="./图片隐写/hm.js"></script> -->
+<link rel="stylesheet" href="./图片隐写/buttons.css">
+<!-- <script src="./图片隐写/jquery.min.js"></script> -->
+<!-- <script async="" src="./图片隐写/f.txt" crossorigin="anonymous"></script> -->
+<!-- <script src="./图片隐写/tj.js"></script> -->
+<script src="./图片隐写/sjcl.js" type="text/javascript"></script>
+    <script src="./图片隐写/main.js" type="text/javascript"></script>
+    <style>
+        #decode_result_image{
+            width: 100px;
+            height: auto;
+            margin: 10px auto;
+        }
+        #decode_image{
+            margin: 10px auto;
+        }
+        #decode_pwd{
+            width: 95%;
+            height: 35px;
+            margin: 10px auto;
+        }
+        #DeMsg{
+            color: #a1c281;
+        }
+        #DeBtn{
+            outline: none;
+            border: 1px solid #a1c281;
+            background: none;
+            margin: 5px auto;
+            padding: 5px 10px;
+            font-size: 14px;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h4 class="strong">
+        解密带隐藏信息的图片
+      </h4>
+      <div class="divider">
+      </div>
+      <div class="row">
+        <div class="span">
+          1. 从电脑中选择一张带有隐藏信息的图片：
+        </div>
+        <div class="span">
+          <input type="file" accept="image/*" id="decode_image" onchange="javascript:selectEncodeImage()">
+        </div>
+      </div>
+      <div class="row">
+        <div class="span">
+          2. 输入需要解开信息的密码（如果没有密码可以不填）：
+        </div>
+        <div class="span six">
+          <input type="password" class="mytxt" placeholder="信息查看密码，可以为空即为图片解密不需要密码" id="decode_pwd">
+        </div>
+      </div>
+      <div>
+        <button class="button button-glow button-border button-rounded button-primary" onclick="javascript:decode()"
+          type="button">
+          解密出隐藏的信息
+        </button>
+      </div>
+      <div class="alert success">
+        <canvas id="decode_result_image" class="hidden">
+        </canvas>
+        <div class="strong" id="messageDecoded">
+        </div>
+      </div>
+      <script>
+        $(document).on('click', '#DeBtn', function() {
+        // 获取要复制的文本
+        var textToCopy = $("#DeMsg").text();
+
+        // 创建一个临时的textarea元素来复制文本
+        var tempInput = $("<textarea>");
+        $("body").append(tempInput);
+        tempInput.val(textToCopy).select();
+
+        // 复制到剪贴板
+        document.execCommand("copy");
+
+        // 移除临时的textarea元素
+        tempInput.remove();
+
+        // 提示复制成功
+        alert("复制成功：" + textToCopy);
+    });
+      </script>
+</body>
+</html>
