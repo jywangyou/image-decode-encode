@@ -27,7 +27,8 @@ function encode(){
     encodeMessage(imgData.data,sjcl.hash.sha256.hash(password),message);
     ctx.putImageData(imgData,0,0);
     output.src=result_image.toDataURL();
-    $_("encode_tip").innerHTML="带有加密信息的图片的信息已经生成，可以保存之后发送给朋友解密吧！"
+    $_("encode_tip").innerHTML="带有加密信息的图片已经生成<br/>点击下方图片就可以保存哦~";
+    document.querySelector('.resdiv').classList.add('resbox');
 }function selectEncodeImage(){var reader=new FileReader();reader.onload=function(event){$_("decode_pwd").value="";$_("messageDecoded").innerHTML="";var img=new Image();img.onload=function(){var ctx=$_("decode_result_image").getContext("2d");ctx.canvas.width=img.width;ctx.canvas.height=img.height;ctx.drawImage(img,0,0)};img.src=event.target.result};reader.readAsDataURL($_("decode_image").files[0])}
 function decode(){
     var password=$_("decode_pwd").value;
