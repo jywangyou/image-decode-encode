@@ -1,0 +1,35 @@
+{
+  "name": "image-steganography",
+  "version": "1.0.0",
+  "description": "基于 LSB 的图片隐写术 JavaScript 库，使用 sjcl 进行 AES 加密，密码可选。",
+  "main": "src/steganography.js",
+  "files": [
+    "src/steganography.js",
+    "lib/sjcl.js",
+    "LICENSE",
+    "README.md"
+  ],
+  "scripts": {
+    "demo": "echo \"Open demo/index.html in your browser\" && start demo/index.html"
+  },
+  "keywords": [
+    "steganography",
+    "image",
+    "lsb",
+    "encryption",
+    "aes",
+    "crypto",
+    "hide",
+    "watermark",
+    "privacy"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jywangyou/image-decode-encode.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jywangyou/image-decode-encode/issues"
+  },
+  "homepage": "https://github.com/jywangyou/image-decode-encode#readme"
+}
